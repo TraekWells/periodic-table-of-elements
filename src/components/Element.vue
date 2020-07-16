@@ -3,6 +3,7 @@
     class="element"
     :class="getClass()"
     :style="{gridColumn: element.xpos, gridRow: element.ypos}"
+    @mouseenter="sendDetails(element)"
   >
     <div class="element__number">{{ element.number }}</div>
     <div class="element__symbol">{{ element.symbol }}</div>
@@ -55,8 +56,10 @@ export default {
           elementCategory = "element__aktinoids";
           break;
       }
-
       return elementCategory;
+    },
+    sendDetails(element) {
+      this.$emit("sendDetails", { element });
     }
   }
 };
@@ -66,14 +69,16 @@ export default {
 @import "../scss/variables";
 
 .element {
+  cursor: pointer;
   padding: 0.5rem;
   position: relative;
+  color: $color-white;
 
   &__number {
     font-size: 0.6rem;
   }
   &__symbol {
-    font-size: 2.1rem;
+    font-size: 2.5rem;
     font-weight: bold;
     text-align: center;
   }
@@ -87,43 +92,33 @@ export default {
   }
   &__alkali-metal {
     background-color: $color-alkali-metals;
-    color: $color-white;
   }
   &__alkaline-earth-metal {
     background-color: $color-alkaline-earth-metals;
-    color: $color-white;
   }
   &__noble-gas {
     background-color: $color-noble-gases;
-    color: $color-white;
   }
   &__metalloid {
     background-color: $color-metalloids;
-    color: $color-white;
   }
   &__post-transition-metal {
     background-color: $color-post-transition-metals;
-    color: $color-white;
   }
   &__transition-metal {
     background-color: $color-transition-metals;
-    color: $color-white;
   }
   &__lanthanoids {
     background-color: $color-lanthanoids;
-    color: $color-white;
   }
   &__aktinoids {
     background-color: $color-aktinoids;
-    color: $color-white;
   }
   &__other-nonmetals {
     background-color: $color-other-non-metals;
-    color: $color-white;
   }
   &__unknown {
     background-color: $color-unknown;
-    color: $color-white;
   }
 }
 </style>

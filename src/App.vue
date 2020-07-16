@@ -1,20 +1,23 @@
 <template>
   <div id="app">
-    <h1>Periodic Table Of Elements</h1>
-    <section class="periodic-table">
-      <Element v-for="element in elements" :element="element" :key="element.number" />
-    </section>
+    <Header />
+    <PeriodicTable />
+    <Footer />
   </div>
 </template>
 
 <script>
 import elements from "./data/data.json";
-import Element from "@/components/Element";
+import Header from "@/components/Header";
+import PeriodicTable from "@/components/PeriodicTable";
+import Footer from "@/components/Footer";
 
 export default {
   name: "App",
   components: {
-    Element
+    Header,
+    PeriodicTable,
+    Footer
   },
   data() {
     return {
@@ -64,11 +67,18 @@ body {
   background-color: #1e063d;
 }
 
+h1 {
+  text-align: center;
+  color: $color-white;
+  font-size: 4rem;
+}
+
 .periodic-table {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(18, 6rem);
   grid-template-rows: repeat(10, 6rem);
   justify-content: center;
+  margin-top: 7rem;
 }
 </style>
