@@ -4,9 +4,6 @@
     <section class="periodic-table">
       <Element v-for="element in elements" :element="element" :key="element.number" />
     </section>
-    <section class="sub-grid" v-if="showOnSubgrid">
-      <Element v-for="element in showOnSubgrid" :element="element" :key="element.number" />
-    </section>
   </div>
 </template>
 
@@ -63,19 +60,15 @@ html {
   font-family: $font-stack;
 }
 
+body {
+  background-color: #1e063d;
+}
+
 .periodic-table {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(18, 6rem);
-  grid-template-rows: repeat(7, 6rem);
-  justify-content: center;
-}
-
-.sub-grid {
-  display: grid;
-  grid-gap: 0.5rem;
-  grid-template-columns: repeat(15, 6rem);
-  grid-template-rows: repeat(2, 6rem);
+  grid-template-rows: repeat(10, 6rem);
   justify-content: center;
 }
 </style>

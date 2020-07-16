@@ -1,5 +1,9 @@
 <template>
-  <article class="element" :class="getClass()">
+  <article
+    class="element"
+    :class="getClass()"
+    :style="{gridColumn: element.xpos, gridRow: element.ypos}"
+  >
     <div class="element__number">{{ element.number }}</div>
     <div class="element__symbol">{{ element.symbol }}</div>
     <div class="element__name">{{ element.name }}</div>
@@ -11,6 +15,11 @@ export default {
   name: "Element",
   props: {
     element: Object
+  },
+  data() {
+    return {
+      previousPosition: 0
+    };
   },
   methods: {
     getClass() {
