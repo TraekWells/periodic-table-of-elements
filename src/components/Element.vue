@@ -2,8 +2,8 @@
   <article
     class="element"
     :class="getClass()"
-    :style="{gridColumn: element.xpos, gridRow: element.ypos}"
-    @mouseenter="sendDetails(element)"
+    :style="{ gridColumn: element.xpos, gridRow: element.ypos }"
+    @click="sendDetails(element)"
   >
     <div class="element__number">{{ element.number }}</div>
     <div class="element__symbol">{{ element.symbol }}</div>
@@ -12,15 +12,12 @@
 </template>
 
 <script>
+// import "atomic-bohr-model/dist/atomicBohrModel.min.js";
+
 export default {
   name: "Element",
   props: {
     element: Object
-  },
-  data() {
-    return {
-      previousPosition: 0
-    };
   },
   methods: {
     getClass() {
@@ -73,17 +70,25 @@ export default {
   padding: 0.5rem;
   position: relative;
   color: $color-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-collapse: collapse;
 
   &__number {
-    font-size: 0.6rem;
+    position: absolute;
+    font-size: 1rem;
+    top: 0.5rem;
+    left: 0.5rem;
   }
   &__symbol {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
     text-align: center;
   }
   &__name {
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-align: center;
   }
   &__mass {
