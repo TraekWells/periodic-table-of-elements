@@ -24,33 +24,36 @@ export default {
       let elementCategory;
 
       switch (this.element.category) {
-        case "diatomic nonmetal":
-        case "polyatomic nonmetal":
+        case "Diatomic Nonmetal":
+        case "Polyatomic Nonmetal":
           elementCategory = "element__other-nonmetals";
           break;
-        case "noble gas":
+        case "Noble Gas":
           elementCategory = "element__noble-gas";
           break;
-        case "alkali metal":
+        case "Alkali Metal":
           elementCategory = "element__alkali-metal";
           break;
-        case "alkaline earth metal":
+        case "Alkaline Earth Metal":
           elementCategory = "element__alkaline-earth-metal";
           break;
-        case "metalloid":
+        case "Metalloid":
           elementCategory = "element__metalloid";
           break;
-        case "post-transition metal":
+        case "Post-Transition Metal":
           elementCategory = "element__post-transition-metal";
           break;
-        case "transition metal":
+        case "Transition Metal":
           elementCategory = "element__transition-metal";
           break;
-        case "lanthanide":
+        case "Lanthanide":
           elementCategory = "element__lanthanoids";
           break;
-        case "actinide":
+        case "Actinide":
           elementCategory = "element__aktinoids";
+          break;
+        case "Unknown":
+          elementCategory = "element__unknown";
           break;
       }
       return elementCategory;
@@ -67,7 +70,7 @@ export default {
 
 .element {
   cursor: pointer;
-  padding: 0.5rem;
+  // padding: 0.5rem;
   position: relative;
   color: $color-white;
   display: flex;
@@ -75,6 +78,25 @@ export default {
   justify-content: center;
   position: relative;
   border-collapse: collapse;
+  transition: 0.2s ease transform;
+
+  &::after {
+    content: "";
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(#000000, 0.3);
+    z-index: -1;
+  }
+
+  &:hover {
+    z-index: 10;
+    transform: scale(1.2);
+    &:after {
+      display: block;
+    }
+  }
 
   &__number {
     position: absolute;
@@ -86,9 +108,10 @@ export default {
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
+    font-family: $font-stack-headers;
   }
   &__name {
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
   }
   &__mass {

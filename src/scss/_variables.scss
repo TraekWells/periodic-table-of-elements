@@ -1,18 +1,18 @@
 // Variables
-$color-alkali-metals: #203f59;
-$color-alkaline-earth-metals: #46718c;
-$color-transition-metals: #6ebad8;
-$color-post-transition-metals: #378cc8;
-$color-metalloids: #e6a819;
-$color-aktinoids: #8364b4;
-$color-lanthanoids: #afa3c2;
-$color-noble-gases: #e29755;
-$color-other-non-metals: #e0b085;
+$color-alkali-metals: darken(#203f59, 15%);
+$color-alkaline-earth-metals: darken(#46718c, 15%);
+$color-transition-metals: darken(#6ebad8, 15%);
+$color-post-transition-metals: darken(#378cc8, 15%);
+$color-metalloids: darken(#e6a819, 15%);
+$color-aktinoids: darken(#8364b4, 15%);
+$color-lanthanoids: darken(#afa3c2, 15%);
+$color-noble-gases: darken(#e29755, 15%);
+$color-other-non-metals: darken(#e0b085, 15%);
 $color-unknown: #cccccc;
 
 $color-dark-gray: #333333;
 $color-light-gray: #f3f3f3;
 $color-white: #ffffff;
 
-$font-stack-body: "Roboto", sans-serif;
-// $font-stack-headers: "Roboto", sans-serif;
+$font-stack-body: "Noto Sans", sans-serif;
+$font-stack-headers: "Noto", serif;

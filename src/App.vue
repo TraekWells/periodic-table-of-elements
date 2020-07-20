@@ -56,4 +56,10 @@ h1 {
   color: $color-white;
   font-size: 4rem;
 }
+
+h1,
+h2,
+h3 {
+  font-family: $font-stack-headers;
+}
 </style>

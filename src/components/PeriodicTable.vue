@@ -1,10 +1,10 @@
 <template>
   <section class="periodic-table">
     <article v-if="panelOpen" class="periodic-table__panel">
-      <div id="bohr-model-container"></div>
+      <!-- <div id="bohr-model-container"></div> -->
       <div class="details">
         <h3 class="details__name">
-          <span>{{ currentElement.number }}</span>
+          <!-- <span>{{ currentElement.number }}</span> -->
           {{ currentElement.name }}
         </h3>
         <div class="columns">
@@ -72,8 +72,8 @@ export default {
   width: 95%;
   margin: 6rem auto 0;
   display: grid;
-  grid-template-columns: repeat(18, 9rem);
-  grid-template-rows: repeat(10, 9rem);
+  grid-template-columns: repeat(18, 8rem);
+  grid-template-rows: repeat(10, 8rem);
   grid-template-areas:
     ". . panel panel panel panel panel panel panel panel panel panel . . . . . ."
     ". . panel panel panel panel panel panel panel panel panel panel . . . . . ."
@@ -84,14 +84,15 @@ export default {
     grid-area: panel;
     display: flex;
     color: $color-white;
-    padding: 2rem;
+    padding: 4rem;
 
     .details {
-      flex-basis: 65%;
+      // flex-basis: 65%;
 
       &__name {
         position: relative;
-        font-size: 3rem;
+        font-size: 4rem;
+        margin-bottom: 1rem;
 
         span {
           position: absolute;
@@ -118,7 +119,7 @@ export default {
       }
 
       &__title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
 
       &__description {

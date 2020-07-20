@@ -1,8 +1,12 @@
 <template>
   <footer class="footer">
     <p>
-      Built and Designed with trial and error by
-      <a href="#">Traek Wells</a>
+      Built and Designed with tears, trial and error by
+      <a
+        href="https://traekwells.com"
+        class="link"
+        target="_blank"
+      >Traek Wells</a>
     </p>
   </footer>
 </template>
@@ -21,5 +25,14 @@ footer {
   text-align: center;
   padding: 8rem 0 3rem;
   font-size: 1.5rem;
+
+  .link {
+    text-decoration: none;
+    color: $color-transition-metals;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 </style>

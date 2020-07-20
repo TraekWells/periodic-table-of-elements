@@ -10,9 +10,4 @@ export default {
 
 <style lang="scss">
 @import "../scss/variables";
-h1 {
-  text-align: center;
-  color: $color-white;
-  font-size: 4rem;
-}
 </style>
