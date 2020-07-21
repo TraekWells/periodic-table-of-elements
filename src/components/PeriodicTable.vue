@@ -21,7 +21,7 @@
             <p class="details__description">{{ currentElement.atomic_mass }}</p>
           </div>
         </div>
-        <p class="details__summary">{{ currentElement.summary }}</p>
+        <!-- <p class="details__summary">{{ currentElement.summary }}</p> -->
       </div>
     </article>
     <Element
@@ -90,6 +90,7 @@ export default {
       // flex-basis: 65%;
 
       &__name {
+        margin-top: 0;
         position: relative;
         font-size: 4rem;
         margin-bottom: 1rem;

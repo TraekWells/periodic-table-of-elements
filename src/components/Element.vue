@@ -12,7 +12,7 @@
 </template>
 
 <script>
-// import "atomic-bohr-model/dist/atomicBohrModel.min.js";
+import "atomic-bohr-model/dist/atomicBohrModel.min.js";
 
 export default {
   name: "Element",
