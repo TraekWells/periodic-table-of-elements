@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import "atomic-bohr-model/dist/atomicBohrModel.min.js";
+// import Atom from "atomic-bohr-model/dist/atomicBohrModel.min.js";
 
 export default {
   name: "Element",
@@ -59,7 +59,7 @@ export default {
       return elementCategory;
     },
     sendDetails(element) {
-      this.$emit("sendDetails", { element });
+      this.$emit("send-details", { element });
     }
   }
 };
@@ -70,7 +70,6 @@ export default {
 
 .element {
   cursor: pointer;
-  // padding: 0.5rem;
   position: relative;
   color: $color-white;
   display: flex;

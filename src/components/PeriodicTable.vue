@@ -3,10 +3,7 @@
     <article v-if="panelOpen" class="periodic-table__panel">
       <!-- <div id="bohr-model-container"></div> -->
       <div class="details">
-        <h3 class="details__name">
-          <!-- <span>{{ currentElement.number }}</span> -->
-          {{ currentElement.name }}
-        </h3>
+        <h3 class="details__name">{{ currentElement.name }}</h3>
         <div class="columns">
           <div class="details__column">
             <p class="details__title">Phase</p>
@@ -21,14 +18,13 @@
             <p class="details__description">{{ currentElement.atomic_mass }}</p>
           </div>
         </div>
-        <!-- <p class="details__summary">{{ currentElement.summary }}</p> -->
       </div>
     </article>
     <Element
       v-for="element in elements"
       :element="element"
       :key="element.number"
-      @sendDetails="displayDetails"
+      @send-details="displayDetails"
     />
   </section>
 </template>
@@ -41,27 +37,38 @@ import Element from "./Element";
 export default {
   name: "PeriodicTable",
   components: {
-    Element
+    Element,
   },
   data() {
     return {
       elements: elements.elements,
       panelOpen: false,
       currentElement: null,
-      atomDisplay: null
+      atomDisplay: null,
     };
   },
   methods: {
     displayDetails(payload) {
       this.panelOpen = true;
       this.currentElement = payload.element;
-      // this.atomDisplay = new Atom({
+
+      // const atomicConfig = {
       //   containerId: "#bohr-model-container",
-      //   numElectrons: 8,
-      //   idNumber: 1
-      // });
-    }
-  }
+      //   numElectrons: 1, // An integer between 1 and 118
+      //   nucleusRadius: 30, // If not supplied will be 1/12 of the containers width
+      //   nucleusColor: "rgba(124,240,10,0.5)", // Hex, string or rbga
+      //   electronRadius: 3, // Default value is 3
+      //   electronColor: "blue", // See nucleusColor
+      //   orbitalSpacing: 10, // If not specified will be a 1/3rd of the nucleusRadius
+      //   orbitalWidth: 1, // width of orbital paths, default is 0.1
+      //   orbitalColor: "black", // see electronColor
+      //   idNumber: 1, // Required int to provide unique Atoms
+      //   animationTime: 1300, // Time in milliseconds for initial electron animation
+      //   rotateConfig: { speed: 50, clockwise: true }, // Rotates entire Atom with given params
+      // };
+      // this.atomDisplay = new Atom(atomicConfig);
+    },
+  },
 };
 </script>
 
@@ -85,6 +92,7 @@ export default {
     display: flex;
     color: $color-white;
     padding: 4rem;
+    justify-content: center;
 
     .details {
       // flex-basis: 65%;
