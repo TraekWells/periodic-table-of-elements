@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import Element from "./components/Element";
+import ElementsGrid from "./components/ElementsGrid";
 
 function App() {
   const [elements, setElements] = React.useState([]);
@@ -16,12 +18,11 @@ function App() {
   return (
     <>
       <h1>Periodic Table of Elements</h1>
-      <ul>
-        {elements.map((element) => (
-          // @ts-ignore
-          <li key={element.number}>{element.name}</li>
+      <ElementsGrid>
+        {elements.map((element, index) => (
+          <Element key={index} element={element} />
         ))}
-      </ul>
+      </ElementsGrid>
     </>
   );
 }
