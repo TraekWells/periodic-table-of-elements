@@ -1,8 +1,10 @@
 import useConvertElementCategory from "../../hooks/useConvertElementCategory";
 import styles from "./ElementLegend.module.scss";
+import { ElementTypes } from "../../common/ElementTypes";
 
 interface LegendItemProps {
   category: string;
+  onMouseEnter: () => void;
 }
 
 const LegendItem = ({ category }: LegendItemProps) => {
@@ -18,10 +20,21 @@ const LegendItem = ({ category }: LegendItemProps) => {
 };
 
 const ElementLegend = () => {
+  const handleLegendItemHover = (type: string) => {
+    console.log(`hovering ${type}`);
+  };
+
   return (
     <div className={`${styles["element-legend"]}`}>
-      <LegendItem category="Diatomic Nonmetal" />
-      <LegendItem category="Noble Gas" />
+      {ElementTypes.map((type) => {
+        return (
+          <LegendItem
+            key={type}
+            category={type}
+            onMouseEnter={() => handleLegendItemHover(type)}
+          />
+        );
+      })}
     </div>
   );
 };

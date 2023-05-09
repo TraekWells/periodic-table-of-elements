@@ -19,12 +19,12 @@ function App() {
   return (
     <div className="container">
       <h1>Periodic Table of Elements</h1>
+      <ElementLegend />
       <ElementsGrid>
         {elements.map((element, index) => (
           <Element key={index} element={element} />
         ))}
       </ElementsGrid>
-      <ElementLegend />
     </div>
   );
 }
