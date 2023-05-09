@@ -1,9 +1,14 @@
-.element {
+.legend-item {
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: var(--color-white);
-  aspect-ratio: 1;
+  margin-bottom: 0.5rem;
+
+  &__indicator {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+  }
 }
 
 .diatomic-nonmetal,
