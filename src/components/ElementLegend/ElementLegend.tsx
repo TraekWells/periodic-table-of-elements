@@ -10,12 +10,9 @@ interface LegendItemProps {
 const LegendItem = ({ category }: LegendItemProps) => {
   const elementClass = useConvertElementCategory(category);
   return (
-    <div className={`${styles["legend-item"]}`}>
-      <span
-        className={`${styles["legend-item__indicator"]} ${styles[elementClass]}`}
-      ></span>
+    <button className={`${styles["legend-item"]}  ${styles[elementClass]}`}>
       <p className={`${styles["legend-item__text"]}`}>{category}</p>
-    </div>
+    </button>
   );
 };
 

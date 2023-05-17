@@ -10,6 +10,7 @@ interface ElementProps {
     xpos: number;
     ypos: number;
     category: string;
+    atomic_mass: number;
   };
 }
 
@@ -24,7 +25,12 @@ const Element = ({ element }: ElementProps) => {
         gridRowStart: `${element.ypos}`,
       }}
     >
-      {element.symbol}
+      <span className={`${styles["element__number"]}`}>{element.number}</span>
+      <span className={`${styles["element__weight"]}`}>
+        {element.atomic_mass.toFixed(3)}
+      </span>
+      <p className={`${styles["element__symbol"]}`}>{element.symbol}</p>
+      <p className={`${styles["element__name"]}`}>{element.name}</p>
     </div>
   );
 };

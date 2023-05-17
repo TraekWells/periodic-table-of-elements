@@ -1,48 +1,46 @@
+@use "../../styles/element-colors";
+
 .element {
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: var(--color-white);
   aspect-ratio: 1;
-}
+  padding: 0.25rem;
 
-.diatomic-nonmetal,
-.polyatomic-nonmetal {
-  background-color: var(--color-diatomic-nonmetal);
-}
+  &__number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-white);
+    border-radius: 0 0 0.75rem 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    opacity: 0.25;
+    color: var(--color-white);
+  }
 
-.alkali-metal {
-  background-color: var(--color-alkali-metal);
-}
+  &__weight {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    font-size: var(--fs-small);
+    opacity: 0.7;
+  }
 
-.alkaline-earth-metal {
-  background-color: var(--color-alkaline-earth-metal);
-}
+  &__symbol {
+    font-size: var(--fs-xlarge);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
 
-.transition-metal {
-  background-color: var(--color-transition-metal);
-}
-
-.post-transition-metal {
-  background-color: var(--color-post-transition-metal);
-}
-
-.metalloid {
-  background-color: var(--color-metalloid);
-}
-
-.noble-gas {
-  background-color: var(--color-noble-gas);
-}
-
-.lanthanide {
-  background-color: var(--color-lanthanide);
-}
-
-.actinide {
-  background-color: var(--color-actinide);
-}
-
-.unknown {
-  background-color: var(--color-unknown);
+  &__name {
+    position: absolute;
+    font-size: var(--fs-medium);
+    font-weight: var(--fw-bold);
+    opacity: 0.8;
+    bottom: 0.25rem;
+  }
 }

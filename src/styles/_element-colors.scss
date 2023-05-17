@@ -1,0 +1,42 @@
+@use "./variables";
+
+.diatomic-nonmetal,
+.polyatomic-nonmetal {
+  background-color: var(--color-diatomic-nonmetal);
+}
+
+.alkali-metal {
+  background-color: var(--color-alkali-metal);
+}
+
+.alkaline-earth-metal {
+  background-color: var(--color-alkaline-earth-metal);
+}
+
+.transition-metal {
+  background-color: var(--color-transition-metal);
+}
+
+.post-transition-metal {
+  background-color: var(--color-post-transition-metal);
+}
+
+.metalloid {
+  background-color: var(--color-metalloid);
+}
+
+.noble-gas {
+  background-color: var(--color-noble-gas);
+}
+
+.lanthanide {
+  background-color: var(--color-lanthanide);
+}
+
+.actinide {
+  background-color: var(--color-actinide);
+}
+
+.unknown {
+  background-color: var(--color-unknown);
+}

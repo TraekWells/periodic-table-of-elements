@@ -1,3 +1,5 @@
+@use "../../styles/element-colors";
+
 .element-legend {
   display: flex;
   flex-wrap: wrap;
@@ -8,52 +10,4 @@
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
-
-  &__indicator {
-    width: 1rem;
-    height: 1rem;
-    margin-right: 0.5rem;
-    border-radius: 50%;
-  }
-}
-
-.diatomic-nonmetal,
-.polyatomic-nonmetal {
-  background-color: var(--color-diatomic-nonmetal);
-}
-
-.alkali-metal {
-  background-color: var(--color-alkali-metal);
-}
-
-.alkaline-earth-metal {
-  background-color: var(--color-alkaline-earth-metal);
-}
-
-.transition-metal {
-  background-color: var(--color-transition-metal);
-}
-
-.post-transition-metal {
-  background-color: var(--color-post-transition-metal);
-}
-
-.metalloid {
-  background-color: var(--color-metalloid);
-}
-
-.noble-gas {
-  background-color: var(--color-noble-gas);
-}
-
-.lanthanide {
-  background-color: var(--color-lanthanide);
-}
-
-.actinide {
-  background-color: var(--color-actinide);
-}
-
-.unknown {
-  background-color: var(--color-unknown);
 }
